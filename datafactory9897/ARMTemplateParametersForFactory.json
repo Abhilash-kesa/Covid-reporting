@@ -1,0 +1,27 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "datafactory9897"
+		},
+		"Is_ablob_covidreportingsa_connectionString": {
+			"value": ""
+		},
+		"Is_adls_covidreportingdl_accountKey": {
+			"value": ""
+		},
+		"datalake270899_accountKey": {
+			"value": ""
+		},
+		"storage2708_connectionString": {
+			"value": ""
+		},
+		"Is_adls_covidreportingdl_properties_typeProperties_url": {
+			"value": "https://datalake270899.dfs.core.windows.net/"
+		},
+		"datalake270899_properties_typeProperties_url": {
+			"value": "https://datalake270899.dfs.core.windows.net/"
+		}
+	}
+}
