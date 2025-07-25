@@ -22,6 +22,9 @@
 		},
 		"datalake270899_properties_typeProperties_url": {
 			"value": "https://datalake270899.dfs.core.windows.net/"
+		},
+		"Event_Trigger_properties_typeProperties_scope": {
+			"value": "/subscriptions/12522796-8562-494c-8937-d2b97aa089c4/resourceGroups/Demo/providers/Microsoft.Storage/storageAccounts/storage2708"
 		}
 	}
 }

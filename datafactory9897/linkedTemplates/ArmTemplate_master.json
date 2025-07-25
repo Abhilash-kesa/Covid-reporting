@@ -31,6 +31,10 @@
 			"type": "string",
 			"defaultValue": "https://datalake270899.dfs.core.windows.net/"
 		},
+		"Event_Trigger_properties_typeProperties_scope": {
+			"type": "string",
+			"defaultValue": "/subscriptions/12522796-8562-494c-8937-d2b97aa089c4/resourceGroups/Demo/providers/Microsoft.Storage/storageAccounts/storage2708"
+		},
 		"containerUri": {
 			"type": "string",
 			"metadata": "URI to storage account containing linked ARM templates"
@@ -75,6 +79,9 @@
 					},
 					"datalake270899_properties_typeProperties_url": {
 						"value": "[parameters('datalake270899_properties_typeProperties_url')]"
+					},
+					"Event_Trigger_properties_typeProperties_scope": {
+						"value": "[parameters('Event_Trigger_properties_typeProperties_scope')]"
 					}
 				}
 			},
