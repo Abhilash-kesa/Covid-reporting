@@ -31,6 +31,22 @@
 			"type": "string",
 			"defaultValue": "https://datalake270899.dfs.core.windows.net/"
 		},
+		"ls_http_opendata_ecdc_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://github.com/"
+		},
+		"Event Trigger_properties_typeProperties_scope": {
+			"type": "string",
+			"defaultValue": "/subscriptions/12522796-8562-494c-8937-d2b97aa089c4/resourceGroups/Demo/providers/Microsoft.Storage/storageAccounts/storage2708"
+		},
+		"tr_ingest_hospital_admissions_data_properties_pl_ingest_ecdc_data_parameters_soucerelativeURL": {
+			"type": "string",
+			"defaultValue": "Abhilash-kesa/AZURE-Data-Factory/blob/main/DATA/hospital_admissions.csv"
+		},
+		"tr_ingest_hospital_admissions_data_properties_pl_ingest_ecdc_data_parameters_sinkFileName": {
+			"type": "string",
+			"defaultValue": "hospital_admissions.csv"
+		},
 		"containerUri": {
 			"type": "string",
 			"metadata": "URI to storage account containing linked ARM templates"
@@ -75,6 +91,18 @@
 					},
 					"datalake270899_properties_typeProperties_url": {
 						"value": "[parameters('datalake270899_properties_typeProperties_url')]"
+					},
+					"ls_http_opendata_ecdc_properties_typeProperties_url": {
+						"value": "[parameters('ls_http_opendata_ecdc_properties_typeProperties_url')]"
+					},
+					"Event Trigger_properties_typeProperties_scope": {
+						"value": "[parameters('Event Trigger_properties_typeProperties_scope')]"
+					},
+					"tr_ingest_hospital_admissions_data_properties_pl_ingest_ecdc_data_parameters_soucerelativeURL": {
+						"value": "[parameters('tr_ingest_hospital_admissions_data_properties_pl_ingest_ecdc_data_parameters_soucerelativeURL')]"
+					},
+					"tr_ingest_hospital_admissions_data_properties_pl_ingest_ecdc_data_parameters_sinkFileName": {
+						"value": "[parameters('tr_ingest_hospital_admissions_data_properties_pl_ingest_ecdc_data_parameters_sinkFileName')]"
 					}
 				}
 			},
