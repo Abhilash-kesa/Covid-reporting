@@ -133,7 +133,7 @@
 							]
 						},
 						{
-							"name": "Delete source file",
+							"name": "Delete Source file",
 							"type": "Delete",
 							"dependsOn": [
 								{
