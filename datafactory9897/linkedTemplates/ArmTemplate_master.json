@@ -33,7 +33,7 @@
 		},
 		"ls_http_opendata_ecdc_properties_typeProperties_url": {
 			"type": "string",
-			"defaultValue": "https://github.com/"
+			"defaultValue": "@{linkedService().sourceBaseURL}"
 		},
 		"Event Trigger_properties_typeProperties_scope": {
 			"type": "string",
