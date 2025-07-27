@@ -29,12 +29,6 @@
 		"Event Trigger_properties_typeProperties_scope": {
 			"value": "/subscriptions/12522796-8562-494c-8937-d2b97aa089c4/resourceGroups/Demo/providers/Microsoft.Storage/storageAccounts/storage2708"
 		},
-		"tr_ingest_hospital_admissions_data_properties_pl_ingest_ecdc_data_parameters_soucerelativeURL": {
-			"value": "Abhilash-kesa/AZURE-Data-Factory/blob/main/DATA/hospital_admissions.csv"
-		},
-		"tr_ingest_hospital_admissions_data_properties_pl_ingest_ecdc_data_parameters_sinkFileName": {
-			"value": "hospital_admissions.csv"
-		},
 		"containerUri": {
 			"value": ""
 		},
