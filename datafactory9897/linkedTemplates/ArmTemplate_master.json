@@ -35,10 +35,6 @@
 			"type": "string",
 			"defaultValue": "@{linkedService().sourceBaseURL}"
 		},
-		"Event Trigger_properties_typeProperties_scope": {
-			"type": "string",
-			"defaultValue": "/subscriptions/12522796-8562-494c-8937-d2b97aa089c4/resourceGroups/Demo/providers/Microsoft.Storage/storageAccounts/storage2708"
-		},
 		"containerUri": {
 			"type": "string",
 			"metadata": "URI to storage account containing linked ARM templates"
@@ -86,13 +82,30 @@
 					},
 					"ls_http_opendata_ecdc_properties_typeProperties_url": {
 						"value": "[parameters('ls_http_opendata_ecdc_properties_typeProperties_url')]"
-					},
-					"Event Trigger_properties_typeProperties_scope": {
-						"value": "[parameters('Event Trigger_properties_typeProperties_scope')]"
 					}
 				}
 			},
 			"dependsOn": []
+		},
+		{
+			"name": "datafactory9897_ArmTemplate_1",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2024-03-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_1.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'datafactory9897_ArmTemplate_0')]"
+			]
 		}
 	]
 }

@@ -25,9 +25,6 @@
 		},
 		"ls_http_opendata_ecdc_properties_typeProperties_url": {
 			"value": "@{linkedService().sourceBaseURL}"
-		},
-		"Event Trigger_properties_typeProperties_scope": {
-			"value": "/subscriptions/12522796-8562-494c-8937-d2b97aa089c4/resourceGroups/Demo/providers/Microsoft.Storage/storageAccounts/storage2708"
 		}
 	}
 }
