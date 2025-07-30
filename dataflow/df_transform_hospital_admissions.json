@@ -148,7 +148,7 @@
 				"     ),",
 				"     skipDuplicateMapInputs: true,",
 				"     skipDuplicateMapOutputs: true) ~> SelectRequiredFields2",
-				"SelectRequiredFields2 split(indicator == 'weekly new hospital admissions per 100k' || indicator == 'weekly new ICU admissions per 100k',",
+				"SelectRequiredFields2 split(indicator == 'Weekly new hospital admissions per 100k' || indicator == 'Weekly new ICU admissions per 100k',",
 				"     disjoint: false) ~> SplitDailyFromWeekly@(Weekly, Daily)",
 				"DimDateSource aggregate(groupBy(ecdc_year_week = year+'-w'+lpad(week_of_year,2,'0')),",
 				"     week_start_date = min(date),",
