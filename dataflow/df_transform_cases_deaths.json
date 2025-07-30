@@ -10,6 +10,9 @@
 						"type": "DatasetReference"
 					},
 					"name": "CountryLookup"
+				},
+				{
+					"name": "source1"
 				}
 			],
 			"sinks": [],
@@ -24,7 +27,9 @@
 				"     ),",
 				"     allowSchemaDrift: true,",
 				"     validateSchema: false,",
-				"     ignoreNoFilesFound: false) ~> CountryLookup"
+				"     ignoreNoFilesFound: false) ~> CountryLookup",
+				"source(allowSchemaDrift: true,",
+				"     validateSchema: false) ~> source1"
 			]
 		}
 	}
