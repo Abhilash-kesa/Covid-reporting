@@ -28,7 +28,18 @@
 			],
 			"sinks": [
 				{
+					"dataset": {
+						"referenceName": "ds_processed_hospital_admission_weekly",
+						"type": "DatasetReference"
+					},
 					"name": "WeeklySink"
+				},
+				{
+					"dataset": {
+						"referenceName": "ds_processed_hospital_admission_daily",
+						"type": "DatasetReference"
+					},
+					"name": "DailySink"
 				}
 			],
 			"transformations": [
@@ -139,7 +150,7 @@
 				"     skipDuplicateMapOutputs: true) ~> SelectRequiredFields2",
 				"SelectRequiredFields2 split(indicator == 'weekly new hospital admissions per 100k' || indicator == 'weekly new ICU admissions per 100k',",
 				"     disjoint: false) ~> SplitDailyFromWeekly@(Weekly, Daily)",
-				"DimDateSource aggregate(groupBy(ecdc_year_week = year + '-w' + lpad(week_of_year, 2, '0')),",
+				"DimDateSource aggregate(groupBy(ecdc_year_week = year+'-w'+lpad(week_of_year,2,'0')),",
 				"     week_start_date = min(date),",
 				"          week_end_date = max(date)) ~> AggDimDate",
 				"SplitDailyFromWeekly@Weekly, AggDimDate join(reported_year_week == ecdc_year_week,",
@@ -201,8 +212,18 @@
 				"     skipDuplicateMapOutputs: true) ~> SelectDaily",
 				"SelectWeekly sink(allowSchemaDrift: true,",
 				"     validateSchema: false,",
+				"     umask: 0022,",
+				"     preCommands: [],",
+				"     postCommands: [],",
 				"     skipDuplicateMapInputs: true,",
-				"     skipDuplicateMapOutputs: true) ~> WeeklySink"
+				"     skipDuplicateMapOutputs: true) ~> WeeklySink",
+				"SelectDaily sink(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     umask: 0022,",
+				"     preCommands: [],",
+				"     postCommands: [],",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true) ~> DailySink"
 			]
 		}
 	}
