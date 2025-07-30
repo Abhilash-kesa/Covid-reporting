@@ -1,0 +1,31 @@
+{
+	"name": "df_transform_cases_deaths",
+	"properties": {
+		"type": "MappingDataFlow",
+		"typeProperties": {
+			"sources": [
+				{
+					"dataset": {
+						"referenceName": "ds_country_lookup",
+						"type": "DatasetReference"
+					},
+					"name": "CountryLookup"
+				}
+			],
+			"sinks": [],
+			"transformations": [],
+			"scriptLines": [
+				"source(output(",
+				"          country as string,",
+				"          country_code_2_digit as string,",
+				"          country_code_3_digit as string,",
+				"          continent as string,",
+				"          population as integer",
+				"     ),",
+				"     allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     ignoreNoFilesFound: false) ~> CountryLookup"
+			]
+		}
+	}
+}
