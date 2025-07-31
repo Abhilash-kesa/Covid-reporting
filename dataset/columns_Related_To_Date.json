@@ -1,0 +1,24 @@
+{
+	"name": "columns_Related_To_Date",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "storage2708",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "date_columns.csv",
+				"folderPath": "DATE",
+				"container": "data"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": []
+	}
+}

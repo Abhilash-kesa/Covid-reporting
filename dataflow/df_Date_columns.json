@@ -1,0 +1,80 @@
+{
+	"name": "df_Date_columns",
+	"properties": {
+		"type": "MappingDataFlow",
+		"typeProperties": {
+			"sources": [
+				{
+					"dataset": {
+						"referenceName": "ds_dim_date_lookup",
+						"type": "DatasetReference"
+					},
+					"name": "DimData"
+				}
+			],
+			"sinks": [
+				{
+					"dataset": {
+						"referenceName": "columns_Related_To_Date",
+						"type": "DatasetReference"
+					},
+					"name": "DimSink"
+				}
+			],
+			"transformations": [
+				{
+					"name": "DerivedColumn"
+				},
+				{
+					"name": "SelectRequiredColumns"
+				}
+			],
+			"scriptLines": [
+				"source(output(",
+				"          date_key as string,",
+				"          date as string,",
+				"          year as string,",
+				"          month as string,",
+				"          day as string,",
+				"          day_name as string,",
+				"          day_of_year as string,",
+				"          week_of_month as string,",
+				"          week_of_year as string,",
+				"          month_name as string,",
+				"          year_month as string,",
+				"          year_week as string",
+				"     ),",
+				"     allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     ignoreNoFilesFound: false) ~> DimData",
+				"DimData derive(DATE = toDate(date,'yyyy-MM-dd'),",
+				"          YEAR = year(toDate(date,'yyyy-MM-dd')),",
+				"          MONTH = month(toDate(date,'yyyy-MM-dd')),",
+				"          WEEKNUM = weekOfYear(toDate(date,'yyyy-MM-dd')),",
+				"          DAYNAME = iif(dayOfWeek(toDate(date, 'yyyy-MM-dd')) == 1, 'Sunday',\r",
+				"iif(dayOfWeek(toDate(date, 'yyyy-MM-dd')) == 2, 'Monday',\r",
+				"iif(dayOfWeek(toDate(date, 'yyyy-MM-dd')) == 3, 'Tuesday',\r",
+				"iif(dayOfWeek(toDate(date, 'yyyy-MM-dd')) == 4, 'Wednesday',\r",
+				"iif(dayOfWeek(toDate(date, 'yyyy-MM-dd')) == 5, 'Thursday',\r",
+				"iif(dayOfWeek(toDate(date, 'yyyy-MM-dd')) == 6, 'Friday', 'Saturday')))))),",
+				"          WEEKSTARTDATE = addDays(toDate(date, 'yyyy-MM-dd'), -(dayOfWeek(toDate(date, 'yyyy-MM-dd')) - 2)),",
+				"          WEEKENDDATE = addDays(addDays(toDate(date, 'yyyy-MM-dd'), -(dayOfWeek(toDate(date, 'yyyy-MM-dd')) - 2)), 6)) ~> DerivedColumn",
+				"DerivedColumn select(mapColumn(",
+				"          DATE = DerivedColumn@DATE,",
+				"          YEAR = DerivedColumn@YEAR,",
+				"          MONTH = DerivedColumn@MONTH,",
+				"          WEEKNUM,",
+				"          DAYNAME,",
+				"          WEEKSTARTDATE,",
+				"          WEEKENDDATE",
+				"     ),",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true) ~> SelectRequiredColumns",
+				"SelectRequiredColumns sink(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true) ~> DimSink"
+			]
+		}
+	}
+}
