@@ -1468,12 +1468,14 @@
 						"          WEEKNUM,",
 						"          DAYNAME,",
 						"          WEEKSTARTDATE,",
-						"          WEEKENDDATE",
+						"          WEEKENDDATE,",
+						"          DAYOFMONTH",
 						"     ),",
 						"     skipDuplicateMapInputs: true,",
 						"     skipDuplicateMapOutputs: true) ~> SelectRequiredColumns",
 						"SelectRequiredColumns sink(allowSchemaDrift: true,",
 						"     validateSchema: false,",
+						"     truncate: true,",
 						"     skipDuplicateMapInputs: true,",
 						"     skipDuplicateMapOutputs: true) ~> DimSink"
 					]
