@@ -73,6 +73,7 @@
 				"     skipDuplicateMapOutputs: true) ~> SelectRequiredColumns",
 				"SelectRequiredColumns sink(allowSchemaDrift: true,",
 				"     validateSchema: false,",
+				"     truncate: true,",
 				"     skipDuplicateMapInputs: true,",
 				"     skipDuplicateMapOutputs: true) ~> DimSink"
 			]
