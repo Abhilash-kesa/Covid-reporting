@@ -57,11 +57,6 @@
 				]
 			}
 		],
-		"parameters": {
-			"windowStart": {
-				"type": "String"
-			}
-		},
 		"annotations": [],
 		"lastPublishTime": "2025-07-22T18:38:38Z"
 	},
