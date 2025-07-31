@@ -1,0 +1,16 @@
+{
+	"name": "dim_date",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AZ_SQL_DB_LINKSERVICE",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "appdb",
+			"table": "dim_date"
+		}
+	}
+}
