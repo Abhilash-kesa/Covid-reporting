@@ -490,6 +490,7 @@
 						"     validateSchema: false,",
 						"     ignoreNoFilesFound: false) ~> DimData",
 						"DimData derive(DATE = toDate(date,'yyyy-MM-dd'),",
+						"          DAYOFMONTH = dayOfMonth(toDate(date,'yyyy-MM-dd')),",
 						"          YEAR = year(toDate(date,'yyyy-MM-dd')),",
 						"          MONTH = month(toDate(date,'yyyy-MM-dd')),",
 						"          WEEKNUM = weekOfYear(toDate(date,'yyyy-MM-dd')),",
