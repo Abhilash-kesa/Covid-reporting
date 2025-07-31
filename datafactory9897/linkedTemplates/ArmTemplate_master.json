@@ -7,6 +7,10 @@
 			"metadata": "Data Factory name",
 			"defaultValue": "datafactory9897"
 		},
+		"AZ_SQL_DB_LINKSERVICE_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'AZ_SQL_DB_LINKSERVICE'"
+		},
 		"Is_ablob_covidreportingsa_connectionString": {
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'Is_ablob_covidreportingsa'"
@@ -22,6 +26,18 @@
 		"storage2708_connectionString": {
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'storage2708'"
+		},
+		"AZ_SQL_DB_LINKSERVICE_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "abhiserver27.database.windows.net"
+		},
+		"AZ_SQL_DB_LINKSERVICE_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "appdb"
+		},
+		"AZ_SQL_DB_LINKSERVICE_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "sqladminuser"
 		},
 		"Is_adls_covidreportingdl_properties_typeProperties_url": {
 			"type": "string",
@@ -62,6 +78,9 @@
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
 					},
+					"AZ_SQL_DB_LINKSERVICE_password": {
+						"value": "[parameters('AZ_SQL_DB_LINKSERVICE_password')]"
+					},
 					"Is_ablob_covidreportingsa_connectionString": {
 						"value": "[parameters('Is_ablob_covidreportingsa_connectionString')]"
 					},
@@ -73,6 +92,15 @@
 					},
 					"storage2708_connectionString": {
 						"value": "[parameters('storage2708_connectionString')]"
+					},
+					"AZ_SQL_DB_LINKSERVICE_properties_typeProperties_server": {
+						"value": "[parameters('AZ_SQL_DB_LINKSERVICE_properties_typeProperties_server')]"
+					},
+					"AZ_SQL_DB_LINKSERVICE_properties_typeProperties_database": {
+						"value": "[parameters('AZ_SQL_DB_LINKSERVICE_properties_typeProperties_database')]"
+					},
+					"AZ_SQL_DB_LINKSERVICE_properties_typeProperties_userName": {
+						"value": "[parameters('AZ_SQL_DB_LINKSERVICE_properties_typeProperties_userName')]"
 					},
 					"Is_adls_covidreportingdl_properties_typeProperties_url": {
 						"value": "[parameters('Is_adls_covidreportingdl_properties_typeProperties_url')]"

@@ -5,6 +5,9 @@
 		"factoryName": {
 			"value": "datafactory9897"
 		},
+		"AZ_SQL_DB_LINKSERVICE_password": {
+			"value": ""
+		},
 		"Is_ablob_covidreportingsa_connectionString": {
 			"value": ""
 		},
@@ -16,6 +19,15 @@
 		},
 		"storage2708_connectionString": {
 			"value": ""
+		},
+		"AZ_SQL_DB_LINKSERVICE_properties_typeProperties_server": {
+			"value": "abhiserver27.database.windows.net"
+		},
+		"AZ_SQL_DB_LINKSERVICE_properties_typeProperties_database": {
+			"value": "appdb"
+		},
+		"AZ_SQL_DB_LINKSERVICE_properties_typeProperties_userName": {
+			"value": "sqladminuser"
 		},
 		"Is_adls_covidreportingdl_properties_typeProperties_url": {
 			"value": "https://datalake270899.dfs.core.windows.net/"
