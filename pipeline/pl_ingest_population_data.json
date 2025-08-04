@@ -169,6 +169,9 @@
 			}
 		],
 		"concurrency": 1,
+		"folder": {
+			"name": "Ingest"
+		},
 		"annotations": []
 	}
 }

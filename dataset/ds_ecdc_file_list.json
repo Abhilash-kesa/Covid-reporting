@@ -5,6 +5,9 @@
 			"referenceName": "Is_ablob_covidreportingsa",
 			"type": "LinkedServiceReference"
 		},
+		"folder": {
+			"name": "Lookup"
+		},
 		"annotations": [],
 		"type": "Json",
 		"typeProperties": {

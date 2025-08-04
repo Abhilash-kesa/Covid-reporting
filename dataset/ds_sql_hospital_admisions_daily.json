@@ -5,6 +5,9 @@
 			"referenceName": "AZ_SQL_DB_LINKSERVICE",
 			"type": "LinkedServiceReference"
 		},
+		"folder": {
+			"name": "Sql"
+		},
 		"annotations": [],
 		"type": "AzureSqlTable",
 		"schema": [
